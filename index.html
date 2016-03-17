@@ -7,6 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Promises Example</title>
     <!-- Bootstrap -->
+    <link href="css/font-awesome.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -14,11 +15,21 @@
 <div class="jumbotron">
     <div class="container">
         <div class="row">
-            <div class="col-md-4"></div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>The 5 Second Game</h3>
+                        Talk to me
+                    </div>
+                    <div class="panel-body">
+                        <p>Type here: <input type="text" id="say-what" placeholder="what do you want to say?"></p>
+                        <p><span id="status"></span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        The 5 Second Game
                         <small>...with ES6 Promises</small>
                     </div>
                     <div class="panel-body">
@@ -28,7 +39,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Battery Status
+                    </div>
+                    <div class="panel-body">
+                        <small>
+                            <p>Charging: <span id="charging"></span></p>
+                            <p>Level: <i id="battery-level"></i></p> <!-- font awesome will use the <i> tag... -->
+                        </small>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

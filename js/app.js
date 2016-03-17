@@ -55,3 +55,31 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 });
+
+document.addEventListener('DOMContentLoaded', function(){
+    var charging = document.getElementById('charging');
+    var level = document.getElementById('battery-level');
+
+    var batteryPromise = navigator.getBattery();
+
+    batteryPromise.then(function(batteryManager){
+        console.log(batteryManager);
+        charging.innerText = batteryManager.charging ? "Yes" : "No";
+        level.innerText = " " + (batteryManager.level) * 100 + "%";
+        level.className = "fa fa-battery-" + Math.round((batteryManager.level) * 4);
+    });
+
+
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+    var saywhat = document.getElementById('say-what');
+    var status = document.getElementById('status');
+    var synth = window.speechSynthesis;
+
+    saywhat.addEventListener('blur', function(){
+        console.log("I've been asked to say..'%s'..apparently!", saywhat.value);
+        var utterance = new SpeechSynthesisUtterance(saywhat.value);
+        synth.speak(utterance);
+    });
+});
